@@ -5,6 +5,7 @@ name := "Paul Dougan"
 
 alias b:= build
 alias c := choose
+alias d := data
 alias e := explore
 alias g := graph
 alias h := help
@@ -21,7 +22,7 @@ default: help
 viz-registry:
     @qsv viz smart --smarter --title "Visualise data/raw/registry.csv" --cols visibility data/raw/registry.csv --open www/qsv-raw-registry-analysis --open 
 
-# build assets
+# build 
 build:
     @make clean
     @make
@@ -34,6 +35,10 @@ choose:
 # launch coding IDE
 code:
     @code .
+
+# open data
+data:
+    @open data
 
 # display sharepoint
 sharepoint:
