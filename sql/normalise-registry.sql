@@ -12,6 +12,14 @@ CASE
     ELSE 'error'
 END  IsActive,
 CASE
+    WHEN IsDeprecated IS NULL THEN 'false'
+    WHEN IsDeprecated =  '' THEN 'false'
+    WHEN IsDeprecated =  'true' THEN 'true'
+    WHEN IsDeprecated =  'false' THEN 'false'
+    ELSE 'error'
+END  IsDeprecated,
+
+CASE
     WHEN TokenAuthMethod IS NULL THEN 'private_key_jwt'
     WHEN TokenAuthMethod =  '' THEN 'private_key_jwt'
     WHEN TokenAuthMethod = 'private_key_jwt'  THEN 'private_key_jwt'
