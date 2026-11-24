@@ -18,9 +18,8 @@ alias w := wiki
 
 default: help
 
-# visualise registry
 viz-registry:
-    @qsv viz smart --smarter --title "Visualise data/raw/registry.csv" --cols visibility data/raw/registry.csv --open 
+    @qsv viz smart --smarter --title "Visualise data/raw/registry.csv" --cols visibility data/raw/registry.csv --open www/qsv-raw-registry-analysis --open 
 
 # build assets
 build:
