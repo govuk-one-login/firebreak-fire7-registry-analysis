@@ -15,12 +15,18 @@ alias p := powerpoint
 alias r := repo
 alias s := sharepoint
 alias v := versions
+alias t := tree
 alias w := wiki
 
 default: help
 
+# visualise the registry data
 viz-registry:
-    @qsv viz smart --smarter --title "Visualise data/raw/registry.csv" --cols visibility data/raw/registry.csv --open www/qsv-raw-registry-analysis --open 
+    @qsv viz smart --smarter --title "Visualise data/interim/registry.csv" data/interim/registry.csv --output www/qsv-registry-analysis/index.html --open
+
+# visualise the epics data
+viz-epics:
+    @qsv viz smart --smarter --title "Visualise data/interim/epics.csv" data/interim/epics.csv --output www/qsv-epics-analysis/index.html --open
 
 # build 
 build:
@@ -39,6 +45,10 @@ code:
 # open data
 data:
     @open data
+
+# view epics
+epics:
+    @open "https://govukverify.atlassian.net/issues?filter=37942"
 
 # display sharepoint
 sharepoint:
@@ -76,6 +86,10 @@ repo:
 # display system informstion
 system-info:
     @echo "{{ arch() }} {{ os_family() }} {{ os() }}"
+
+# display tree
+tree:
+    @tree
 
 # display versions
 versions:
